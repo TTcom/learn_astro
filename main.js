@@ -7,11 +7,13 @@ function createWindow () {
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    // show: false,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
   })
-
+  // mainWindow.maximize() //设置窗口最大化
+  // mainWindow.show() //展示窗口
   // and load the index.html of the app.
   mainWindow.loadFile('./dist/index.html')
 
