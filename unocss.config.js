@@ -9,6 +9,7 @@ import {
   export default defineConfig({
     shortcuts: [
       ['btn','text-center'],
+      ['icon-btn', 'text-[0.9em] inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-50 '],
     ],
     presets: [
       presetUno(),

@@ -23,6 +23,7 @@
   "license": "CC0-1.0",
   "dependencies": {
     "@astrojs/vue": "^2.2.0",
+    "@iconify-json/carbon": "^1.1.16",
     "astro": "^2.4.1",
     "vue": "^3.3.4"
   },

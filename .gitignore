@@ -6,6 +6,7 @@ App-win32-x64/
 
 # dependencies
 node_modules/
+userMsg.js
 
 # logs
 npm-debug.log*
