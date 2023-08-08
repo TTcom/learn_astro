@@ -1,15 +1,25 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/card.vue';
+import Card from "../components/card.vue"
+import 'uno.css'
 ---
 
-<Layout title="">
-	<Card client:visible></Card>
-</Layout>
+<html lang="en" style="background:#070709">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>aCard</title>
+  </head>
+  <body class="font-sans dark:text-white dark:bg-hex-121212">
+    <div class="flex flex-col">
+      <Card containerClass="card" client:only="vue"></Card>
+    </div>
+  </body>
 
-<style>
-*{
-	margin: 0;
-	padding: 0;
-}
-</style>
+  <script is:inline src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
+  <script is:inline>
+    // VConsole 默认会挂载到 `window.VConsole` 上
+    var vConsole = new window.VConsole();
+  </script>
+</html>

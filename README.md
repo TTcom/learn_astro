@@ -1,5 +1,9 @@
 # Astro Starter Kit: Basics
-
+```
+- 项目部署指南
+- npm run build
+- node dist/server/entry.mjs
+```
 ```
 npm create astro@latest -- --template basics
 ```

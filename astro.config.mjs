@@ -1,20 +1,26 @@
-import { defineConfig } from 'astro/config';
-import vue from '@astrojs/vue';
-import UnoCSS from 'unocss/astro'
+import { defineConfig } from 'astro/config'
+import Unocss from 'unocss/astro'
+import nodeAdapter from '@astrojs/node'
 
-// const modules = import.meta.glob('./preload.js')
-// console.log('modules',modules)
-// console.log('meta.glob.102', modules['./preload.js']())
-// modules['./preload.js']().then(data=>{
-//     console.log('ddddddddd',data.obj)
-// })
+// https://astro.build/config
+import vue from '@astrojs/vue'
+
 // https://astro.build/config
 export default defineConfig({
-    integrations: [
-        vue(),
-        UnoCSS(),
-    ],
-    build: {
-        assetsPrefix: './'
-      }
-});
+  output: 'server',
+  base: '/btmario',
+  adapter: nodeAdapter({
+    mode: 'standalone',
+  }),
+  server: {
+    host: '0.0.0.0',
+  },
+  integrations: [vue({
+    appEntrypoint: '/src/pages/_app',
+    template: {
+      compilerOptions: {
+        isCustomElement: tag => tag.startsWith('my-'),
+      },
+    },
+  }), Unocss()],
+})

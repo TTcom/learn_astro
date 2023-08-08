@@ -1,5 +1,6 @@
 <template>
-  <div  flex class="w-100%" flex-wrap -ml-5px>
+  <div  flex class="w-100% -ml-5px" flex-wrap>
+    <span c-white text-20px>test</span> 
     <div pl="10px"  mb-10px class="w-25%" box-border v-for="(item,i) in user">
       <div class="card h-100%" bg-white flex flex-col justify-center box-border   px-16px py-16px pb-3  rounded-5px lh-20px>
         <div v-for="(val, key, index) in item" mb-15px>
@@ -16,17 +17,17 @@
 </div>
 </template>
 <script setup>
-import {usermsg} from './userMsg.js'
-let user = usermsg
-function copyText(val) {
-  var copyipt = document.createElement("input");
-      var text = val;
-      copyipt.setAttribute("value", text);
-      document.body.appendChild(copyipt);
-      copyipt.select();
-      document.execCommand("copy");
-	    document.body.removeChild(copyipt);
-}
+// import {usermsg} from './userMsg.js'
+let user = 'usermsg'
+// function copyText(val) {
+//   var copyipt = document.createElement("input");
+//       var text = val;
+//       copyipt.setAttribute("value", text);
+//       document.body.appendChild(copyipt);
+//       copyipt.select();
+//       document.execCommand("copy");
+// 	    document.body.removeChild(copyipt);
+// }
 </script>
 <style>
 .card{
